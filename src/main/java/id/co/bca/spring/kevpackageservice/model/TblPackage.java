@@ -1,0 +1,27 @@
+package id.co.bca.spring.kevpackageservice.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "package")
+public class TblPackage {
+    @Id
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "name")
+    private String name;
+    @Column(name = "description")
+    private String description;
+    @Column(name = "amount")
+    private Double amount;
+}

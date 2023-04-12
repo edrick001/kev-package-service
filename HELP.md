@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'id.co.bca.spring.package' is invalid and this project uses 'com.example.demo' instead.
+* The original package name 'id.co.bca.spring.kev-package-service' is invalid and this project uses 'id.co.bca.spring.kevpackageservice' instead.
 
 # Getting Started
 
