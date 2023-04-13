@@ -3,12 +3,10 @@ package id.co.bca.spring.kevpackageservice.controller;
 import id.co.bca.spring.kevpackageservice.model.PackageDto;
 import id.co.bca.spring.kevpackageservice.model.TblPackage;
 import id.co.bca.spring.kevpackageservice.service.PackageService;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,14 +44,40 @@ public class PackageController {
         return output;
     }
 
-    @GetMapping("/update-package")
+    @PutMapping("/add-package")
+    public @ResponseBody String addPackage(@RequestBody PackageDto input) throws Exception {
+        String output = "";
+
+        try{
+            output = service.addPackageProcess(input);
+        } catch (Exception ex) {
+            output = ex.toString();
+        }
+
+        return output;
+    }
+
+    @PutMapping("/update-package")
     public @ResponseBody String updatePackage(@RequestBody PackageDto input) throws Exception {
         String output = "";
 
         try{
-            output = service.updatePackage(input);
+            output = service.updatePackageProcess(input);
         } catch (Exception ex) {
-            throw new Exception(ex.toString());
+            output = ex.toString();
+        }
+
+        return output;
+    }
+
+    @PutMapping("/delete-package/{package-id}")
+    public @ResponseBody String deletePackage(@PathVariable("package-id") int packageId) throws Exception {
+        String output = "";
+
+        try{
+            output = service.deletePackageProcess(packageId);
+        } catch (Exception ex) {
+            output = ex.toString();
         }
 
         return output;

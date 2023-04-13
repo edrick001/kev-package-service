@@ -17,7 +17,6 @@ public class TblPackage {
     @Id
     @Column(name = "id")
     private int id;
-
     @Column(name = "name")
     private String name;
     @Column(name = "description")
