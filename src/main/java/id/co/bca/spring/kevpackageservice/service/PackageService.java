@@ -25,7 +25,7 @@ public class PackageService {
     }
 
     @Transactional
-    public String addPackageProcess(PackageDto data) throws Exception {
+    public String addPackageProcess(PackageDto data) {
         String output = "";
 
         try{
@@ -47,14 +47,13 @@ public class PackageService {
             output = "Success Add Data";
         } catch (Exception e){
             output = e.toString();
-            throw new Exception(e);
         }
 
         return output;
     }
 
     @Transactional
-    public String updatePackageProcess(PackageDto data) throws Exception {
+    public String updatePackageProcess(PackageDto data) {
         String output = "";
 
         try{
@@ -74,14 +73,13 @@ public class PackageService {
             output = "Success Update Data";
         } catch (Exception e){
             output = e.toString();
-            throw new Exception(e);
         }
 
         return output;
     }
 
     @Transactional
-    public String deletePackageProcess(int packageId) throws Exception {
+    public String deletePackageProcess(int packageId) {
         String output = "";
 
         try{

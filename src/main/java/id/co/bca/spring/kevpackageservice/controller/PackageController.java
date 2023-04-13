@@ -45,7 +45,7 @@ public class PackageController {
     }
 
     @PutMapping("/add-package")
-    public @ResponseBody String addPackage(@RequestBody PackageDto input) throws Exception {
+    public @ResponseBody String addPackage(@RequestBody PackageDto input) {
         String output = "";
 
         try{
@@ -58,7 +58,7 @@ public class PackageController {
     }
 
     @PutMapping("/update-package")
-    public @ResponseBody String updatePackage(@RequestBody PackageDto input) throws Exception {
+    public @ResponseBody String updatePackage(@RequestBody PackageDto input) {
         String output = "";
 
         try{
@@ -71,7 +71,7 @@ public class PackageController {
     }
 
     @PutMapping("/delete-package/{package-id}")
-    public @ResponseBody String deletePackage(@PathVariable("package-id") int packageId) throws Exception {
+    public @ResponseBody String deletePackage(@PathVariable("package-id") int packageId) {
         String output = "";
 
         try{
